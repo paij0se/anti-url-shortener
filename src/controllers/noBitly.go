@@ -10,6 +10,8 @@ import (
 )
 
 func NoBitly(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("allow-access-control-origin", "*")
+	w.Header().Set("allow-access-origin", "*")
 	GetProxy()
 
 	if r.Body == http.NoBody {
